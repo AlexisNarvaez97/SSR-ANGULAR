@@ -1,1 +1,11 @@
-<p>user-information works!</p>
+<div class="container d-flex justify-content-center">
+    <div class="card" style="width: 18rem" *ngIf="user">
+        <img class="card-img-top" [src]="user.picture" [alt]="user.registerDate" />
+        <div class="card-body">
+          <h5 class="card-title">{{ user.firstName }} {{ user.lastName }}</h5>
+          <p class="card-text">{{ user.email }}</p>
+          <a href="#" class="btn btn-primary">Ir a los post</a>
+        </div>
+      </div>
+      
+</div>
