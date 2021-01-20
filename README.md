@@ -6,22 +6,20 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Compile SSR
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `npm run build:ssr` to generate a build dist.
 
-## Build
+[![Compiler](https://i.gyazo.com/7c64c17f271bc12acf6ffade262e4aa9.png)](https://gyazo.com/7c64c17f271bc12acf6ffade262e4aa9)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Run serve SSR
 
-## Running unit tests
+Run `npm run serve:ssr` to run serve nodejs.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+[![Serve](https://i.gyazo.com/1e7078a7c652fbafed6f7d147f39e7e7.png)](https://gyazo.com/1e7078a7c652fbafed6f7d147f39e7e7)
 
-## Running end-to-end tests
+# Functioning
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+[![Router](https://i.gyazo.com/c1fdb3c040f0a06dcc5b3caceb19a329.gif)](https://gyazo.com/c1fdb3c040f0a06dcc5b3caceb19a329)
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[![User](https://i.gyazo.com/ad30ba5f220cf312e5884f79028d75d4.gif)](https://gyazo.com/ad30ba5f220cf312e5884f79028d75d4)
