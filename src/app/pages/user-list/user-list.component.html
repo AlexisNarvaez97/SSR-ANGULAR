@@ -1,17 +1,23 @@
 <div class="container mt-3" *ngIf="users">
     <h1 class="text-center">List Users</h1>
     <div class="row row-cols-4 g-4">
-      <div class="col" *ngFor="let user of users">
-        <div class="card">
-          <img [src]="user.picture" class="card-img-top img-thumbnail" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">{{ user.firstName }} {{ user.lastName }} </h5>
-            <p class="card-text">
-              {{ user.email }} {{ user.title }}
-            </p>
-            <a [routerLink]="['/user-list', user.id]">Ir al perfil</a>
+      <ng-container>
+        <div class="col" *ngFor="let user of users">
+          <div class="card">
+            <img [src]="user.picture" class="card-img-top img-thumbnail" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">{{ user.firstName }} {{ user.lastName }} </h5>
+              <p class="card-text">
+                {{ user.email }} {{ user.title }}
+              </p>
+              <a [routerLink]="['/user-list', user.id]">Ir al perfil</a>
+            </div>
           </div>
         </div>
-      </div>
+      </ng-container>
+      
     </div>
 </div>
+
+<!-- Estas directivas evitan que la página que sirve el servidor evite esa carga de contenido que puede ser cargado por lado del cliente,
+en este caso, se carga solo el titulo "List Users" desde el servidor y la lista de usuarios lo sirve -->

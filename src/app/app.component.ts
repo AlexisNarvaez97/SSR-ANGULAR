@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
@@ -47,7 +48,7 @@ export class AppComponent implements OnInit {
   getMetas(): void {
     const tags = this.meta.getTags('name');
     for (const tag of tags) {
-      console.log(tag);
+      // console.log(tag);
     }
   }
 }
