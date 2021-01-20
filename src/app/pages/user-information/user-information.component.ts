@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/shared/user.model';
@@ -9,7 +9,7 @@ import { UserService } from '../user-list/user.service';
   templateUrl: './user-information.component.html',
   styleUrls: ['./user-information.component.scss']
 })
-export class UserInformationComponent implements OnInit {
+export class UserInformationComponent implements OnInit, OnDestroy {
 
   public user: User;
 
@@ -27,9 +27,15 @@ export class UserInformationComponent implements OnInit {
   getCurrentUser(id: string): void {
     this.userService.getUser(id).subscribe(resp => {
       this.user = resp;
-      this.meta.addTag({ name: 'og:title', content: this.user.firstName });
+      this.meta.updateTag({ name: 'og:title', content: this.user.firstName });
       this.title.setTitle(this.user.firstName);
     });
   }
+
+  ngOnDestroy(): void {
+    // this.meta.removeTag('name=og:title');
+    this.meta.removeTag('name=\'og:title\'');
+  }
+
 
 }
